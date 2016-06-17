@@ -1,0 +1,1 @@
+var gulp=require("gulp"),uglify=require("gulp-uglify"),rename=require("gulp-rename");gulp.task("uglify",function(){gulp.src(["./*.js","!./*-min.js"]).pipe(uglify()).pipe(rename(function(e){".js"!==e.extname||e.basename.match(/-min/)||(e.basename+="-min")})).pipe(gulp.dest("./"))});
